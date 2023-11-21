@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* ----------------------------------------------------------------
+       common
+---------------------------------------------------------------- */
+html {
+    scroll-behavior: smooth;
+    font-size: 10px;
+}
+* {
+    letter-spacing: -0.05em;
+}
+.display-m {
+    display: none;
+}
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+}
+.inner {
+    position: relative;
+    width: 1240px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* layout */
+
+/* router active style */
+.router-link-active{
+    color: red;
+    border-bottom: 1px solid red;
+}
+@media screen and (max-width:1024px) {
+    .display-pc {
+        display: none;
+    }
+    .display-m {
+        display: block;
+    }
+}
+
+@media screen and (max-width:768px){
+
+}
