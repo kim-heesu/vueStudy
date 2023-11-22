@@ -5,6 +5,8 @@ import HelloVue02 from "@/components/HelloVue02.vue";
 import HelloVueContent from "@/views/HelloVueContent.vue";
 import ByeVue from "@/views/ByeVue.vue";
 
+import Error404 from "@/views/Error404.vue"
+
 const routes = [
     {
         path: "/",
@@ -34,6 +36,17 @@ const routes = [
         name: "ByeVue",  // router name
         component: ByeVue,  // Path로 이동될 Component
     },
+
+    // 404
+    {
+        path: '/404',
+        name: 'notFound',
+        component: Error404,
+      },
+      {
+        path: '/:pathMatch(.*)*',
+        redirect: '/404',
+      },
     
 ];
 
