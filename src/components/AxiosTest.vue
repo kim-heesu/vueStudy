@@ -16,7 +16,6 @@
 </style>
 <script>
 // axios 예제
-// import axios from "axios";
 export default {
     name: 'AxiosTest',
     components:{
