@@ -3,6 +3,11 @@
         <div class="inner">
             <h1 class="logo"><router-link to="/">난 로고</router-link></h1>
             <Nav />
+            <div class="user-box">
+                <router-link to="/login" class="btn btn-green btn-login">로그인</router-link>
+                <router-link to="/join" class="btn btn-green btn-join">회원가입</router-link>
+            </div>
+
         </div>
     </header>
 </template>
@@ -23,12 +28,18 @@ header{
 }
 header .inner{
     display: flex;
-    gap: 3rem;
     align-items: center;
+    justify-content: space-between;
     padding: 1rem;
 }
 .logo{
     font-size: 2.5rem;
     font-weight: 700;
+}
+.user-box > * {
+    padding: 1rem;
+    margin: 0 0.5rem;
+    font-size: 1.3rem;
+    transition: all 0.3s;
 }
 </style>

@@ -26,14 +26,84 @@ html {
     max-width: 90%;
     margin: 0 auto;
 }
-
-/* layout */
-
-/* router active style */
-.router-link-active{
-    color: red;
-    border-bottom: 1px solid red;
+/* button style */
+.btn{
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
 }
+.btn-green {
+    border: 1px solid green;
+    color: green;
+}
+.btn-green:hover{
+    background: green;
+    color: #fff;
+}
+.btn-green-bg {
+    background: green;
+    color: #fff;
+}
+.btn-green-bg:hover{
+    background: #005d00;
+}
+
+/* form style */
+.form-style01 {
+    margin-top: 3rem;
+}
+.form-style01 .form-box + .form-box{
+    margin-top: 2rem;
+}
+.form-style01 .form-tit{
+    display: block;
+    font-size: 1.3rem;
+}
+.form-style01 .form-tit + input {
+    display: block;
+    width: 100%;
+    height: 4rem;
+    margin-top: 1rem;
+    padding: 0 1rem;
+    border: 1px solid #ddd;
+}
+form[class*="form-style"] .btn-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 4rem;
+}
+form[class*="form-style"] .btn-wrap > *{
+    flex:1;
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+
+/* ----------------------------------------------------------------
+       content
+---------------------------------------------------------------- */
+/* member */
+.member .inner{
+    width: 50rem;
+    margin: 6rem auto 10rem;
+}
+.member h2{
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align:center;
+}
+
+/* ----------------------------------------------------------------
+       tablet : max-width:1024px
+---------------------------------------------------------------- */
 @media screen and (max-width:1024px) {
     .display-pc {
         display: none;
@@ -43,6 +113,9 @@ html {
     }
 }
 
+/* ----------------------------------------------------------------
+       mobile : max-width:768px
+---------------------------------------------------------------- */
 @media screen and (max-width:768px){
 
 }

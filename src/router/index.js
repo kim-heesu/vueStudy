@@ -5,6 +5,9 @@ import HelloVue02 from "@/components/HelloVue02.vue";
 import HelloVueContent from "@/views/HelloVueContent.vue";
 import ByeVue from "@/views/ByeVue.vue";
 
+import Login from "@/views/Login.vue";
+import Join from "@/views/Join.vue";
+
 import Error404 from "@/views/Error404.vue"
 
 const routes = [
@@ -14,7 +17,7 @@ const routes = [
         component: Main,
     },
     {
-        path: "/HelloVue",
+        path: "/helloVue",
         component: HelloVue,
         children:[ 
             // 네스티 라우터 nested-routes
@@ -28,13 +31,23 @@ const routes = [
         ],
     },
     {
-        path:'/HelloVue/content',
+        path:'/helloVue/content',
         component: HelloVueContent,
     },
     {
-        path: "/ByeVue",  // ByeVue.vue로 이동할 Path
+        path: "/byeVue",  // ByeVue.vue로 이동할 Path
         name: "ByeVue",  // router name
         component: ByeVue,  // Path로 이동될 Component
+    },
+    {
+        path: "/login",
+        name: "Login",
+        component: Login,
+    },
+    {
+        path: "/join",
+        name: "Join",
+        component: Join,
     },
 
     // 404

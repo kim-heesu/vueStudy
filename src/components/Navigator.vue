@@ -3,12 +3,12 @@
         <ul>
             <li><router-link to="/">HOME</router-link></li>
             <li>
-                <router-link to="/HelloVue">안뇽</router-link>
+                <router-link to="/helloVue">안뇽</router-link>
                 <ul class="depth">
-                    <router-link to="/HelloVue/content">안뇽의 하위메뉴01</router-link>
+                    <router-link to="/helloVue/content">안뇽의 하위메뉴01</router-link>
                 </ul>
             </li>
-            <li><router-link to="/ByeVue">빠이</router-link></li>
+            <li><router-link to="/byeVue">빠이</router-link></li>
         </ul>
     </nav>
 </template>
@@ -46,5 +46,10 @@ nav .depth{
 }
 nav ul li:hover .depth{
     display: block;
+}
+/* router active style */
+.router-link-active{
+    color: red;
+    border-bottom: 1px solid red;
 }
 </style>

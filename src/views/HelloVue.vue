@@ -6,7 +6,7 @@
             
             <ChildTest></ChildTest> <br>
             <!-- 네스티 라우터 nested-routes -->
-            <router-link to="/HelloVue/depth">뎁스 nested-routes</router-link>
+            <router-link to="/helloVue/depth">뎁스 nested-routes</router-link>
             <router-view></router-view>
         </div>
     </div>
