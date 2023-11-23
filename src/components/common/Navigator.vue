@@ -39,10 +39,10 @@ nav .depth {
   position: absolute;
   top: 100%;
   left: 50%;
+  width: max-content;
+  padding: 1rem;
   background: #fff;
   border: 1px solid #ddd;
-  padding: 1rem;
-  width: max-content;
   transform: translateX(-50%);
 }
 nav .depth li {
