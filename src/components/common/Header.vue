@@ -41,6 +41,11 @@ header .inner{
     padding: 0.8rem 1.2rem;
     margin: 0 0.5rem;
     font-size: 1.3rem;
+    font-weight: 600;
     transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
 }
 </style>

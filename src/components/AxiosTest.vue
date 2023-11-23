@@ -1,17 +1,16 @@
 <template>
     <ul class="pagenation">
-        <li><button type="button" value="1" @click="[changePage($event), getList()]">1</button></li>
-        <li><button type="button" value="2" @click="[changePage($event), getList()]">2</button></li>
-        <li><button type="button" value="3" @click="[changePage($event), getList()]">3는 없긴함</button></li>
-        <li><button type="button" value="4" @click="[changePage($event), getList()]">4는 없긴함</button></li>
+        <li v-for="num in getList01.total_pages" :key="num"><button type="button" :value="num" @click="[changePage($event), getList()]">{{ num }}</button></li>
+        <li><button type="button" value="3" @click="[changePage($event), getList()]">page넘버가 현재 호출된 리스트의 total_pages보다 크면?</button></li>
     </ul>
     <span>지금 페이지 번호는? {{ page }}</span>
     <ul class="get-list">
-        <li v-for="data in getList01.data" :key="data.id">
+        <li v-for="data in getList01.data" :key="data.id" v-if="getList01.total_pages >= getList01.page">
             <img :src="data.avatar" :alt="data.last_name + '프로필'" />
             <p>유저네임 : {{ data.first_name }},{{ data.last_name }}</p>
             <p>이메일 : {{ data.email }}</p>
         </li>
+        <li class="list-empty" v-else><p>결과가 없습니다.</p></li>
     </ul>
     
 </template>
@@ -31,6 +30,18 @@
     height: 2.5rem;
     padding: 0 1rem;
     border: 1px solid #000;
+}
+.list-empty{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30rem;
+    font-weight: 800;
+}
+.list-empty p::before{
+    content:"ㅠ,ㅠ";
+    display: block;
+    margin-bottom: 1rem;
 }
 </style>
 <script>
