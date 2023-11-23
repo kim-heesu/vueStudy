@@ -2,14 +2,13 @@
     <div class="content-wrap">
         <div class="inner">
             <p v-for="test in testList" :key="test">{{ test.txt }}</p>
+            <br />
             <div v-for="(list, i) in listlsit" :key="i">{{ list }}</div>
-            <hr />
-            <ChildTest></ChildTest>
+            <br />
 
-            <hr />
-
+            <ChildTest></ChildTest> <br />
             <!-- 네스티 라우터 nested-routes -->
-            <router-link to="/HelloVue/depth">뎁스</router-link>
+            <router-link to="/HelloVue/depth">뎁스 nested-routes</router-link>
             <router-view></router-view>
         </div>
     </div>
@@ -32,7 +31,7 @@ export default {
                 { test: 2, txt: 2222 },
                 { test: 3, txt: 3333 },
             ],
-            listlsit: { 1: 1, 2: 2, 3: 3, 4: 4 },
+            listlsit: { 1: "안뇽1", 2: "안뇽2", 3: "안뇽3", 4: "안뇽4" },
         };
     },
 };
