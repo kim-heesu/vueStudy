@@ -5,8 +5,7 @@
         <li><button type="button" value="3" @click="[changePage($event), getList()]">3는 없긴함</button></li>
         <li><button type="button" value="4" @click="[changePage($event), getList()]">4는 없긴함</button></li>
     </ul>
-    {{ page }}
-    <button type="button">페이지변경</button>
+    <span>지금 페이지 번호는? {{ page }}</span>
     <ul class="get-list">
         <li v-for="data in getList01.data" :key="data.id">
             <img :src="data.avatar" :alt="data.last_name + '프로필'" />
