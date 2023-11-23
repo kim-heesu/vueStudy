@@ -1,4 +1,12 @@
 <template>
+    <ul class="pagenation">
+        <li><button type="button" value="1" @click="[changePage($event), getList()]">1</button></li>
+        <li><button type="button" value="2" @click="[changePage($event), getList()]">2</button></li>
+        <li><button type="button" value="3" @click="[changePage($event), getList()]">3는 없긴함</button></li>
+        <li><button type="button" value="4" @click="[changePage($event), getList()]">4는 없긴함</button></li>
+    </ul>
+    {{ page }}
+    <button type="button">페이지변경</button>
     <ul class="get-list">
         <li v-for="data in getList01.data" :key="data.id">
             <img :src="data.avatar" :alt="data.last_name + '프로필'" />
@@ -6,12 +14,24 @@
             <p>이메일 : {{ data.email }}</p>
         </li>
     </ul>
-
+    
 </template>
 <style scope>
 .get-list li{
     margin: 2rem 0;
     text-align:center;
+}
+
+.pagenation li{
+    display: inline-block;
+    margin: 0 1rem;
+    text-align: center;
+}
+.pagenation button{
+    width: auto;
+    height: 2.5rem;
+    padding: 0 1rem;
+    border: 1px solid #000;
 }
 </style>
 <script>
@@ -22,6 +42,7 @@ export default {
     },
     data(){
         return{
+            page: 1,
             getList01:{},
             testTxt:'안녕'
         }
@@ -31,13 +52,18 @@ export default {
     },
     methods:{
         getList(){
-            this.$axios.get(`https://reqres.in/api/users?/page=2`)
+            this.$axios.get(`https://reqres.in/api/users?page=`+ this.page)
             .then((res) => {          
                 this.getList01 = res.data;        
             })        
             .catch((res) => {          
                 console.error(res);        
             });
+        },
+
+        // page변경
+        changePage(event) {
+            this.page = event.target.value
         }
     },
 }
