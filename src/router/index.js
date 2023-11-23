@@ -5,8 +5,8 @@ import HelloVue02 from "@/components/HelloVue02.vue";
 import HelloVueContent from "@/views/HelloVueContent.vue";
 import ByeVue from "@/views/ByeVue.vue";
 
-import Login from "@/views/Login.vue";
-import Join from "@/views/Join.vue";
+import Login from "@/views/member/Login.vue";
+import Join from "@/views/member/Join.vue";
 
 import Error404 from "@/views/Error404.vue"
 
@@ -40,12 +40,12 @@ const routes = [
         component: ByeVue,  // Path로 이동될 Component
     },
     {
-        path: "/login",
+        path: "/member/login",
         name: "Login",
         component: Login,
     },
     {
-        path: "/join",
+        path: "/member/join",
         name: "Join",
         component: Join,
     },

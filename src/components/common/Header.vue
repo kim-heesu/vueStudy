@@ -4,8 +4,8 @@
             <h1 class="logo"><router-link to="/">난 로고</router-link></h1>
             <Nav />
             <div class="user-box">
-                <router-link to="/login" class="btn btn-green btn-login">로그인</router-link>
-                <router-link to="/join" class="btn btn-green btn-join">회원가입</router-link>
+                <router-link to="/member/login" class="btn btn-green btn-login">로그인</router-link>
+                <router-link to="/member/join" class="btn btn-green btn-join">회원가입</router-link>
             </div>
 
         </div>
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Nav from '@/components/Navigator.vue';
+import Nav from '@/components/common/Navigator.vue';
 export default {
     name: 'Header',
     components: {

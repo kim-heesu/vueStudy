@@ -17,7 +17,7 @@
                 </div>
                 <div class="btn-wrap">
                     <button type="submit" class="btn btn-green-bg">회원가입</button>
-                    <router-link to="/login" class="btn btn-green-bg">계정이 있나요?</router-link>
+                    <router-link to="/member/login" class="btn btn-green-bg">계정이 있나요?</router-link>
                 </div>
             </form>
         </div>

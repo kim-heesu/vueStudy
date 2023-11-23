@@ -13,7 +13,7 @@
                 </div>
                 <div class="btn-wrap">
                     <button type="submit" class="btn btn-green-bg">로그인</button>
-                    <router-link to="/join" class="btn btn-green-bg">계정이 없나요?</router-link>
+                    <router-link to="/member/join" class="btn btn-green-bg">계정이 없나요?</router-link>
                 </div>
                 
             </form>
