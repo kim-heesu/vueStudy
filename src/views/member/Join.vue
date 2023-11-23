@@ -9,7 +9,7 @@
                 </div>
                 <div class="form-box">
                     <label class="form-tit" for="joinPw">비밀번호</label>
-                    <input type="password" id="joinPw" placeholder="비밀번호를 입력하세요">
+                    <input type="password" id="joinPw" autocomplete="off" placeholder="비밀번호를 입력하세요">
                 </div>
                 <div class="form-box">
                     <label class="form-tit" for="joinEmail">이메일</label>

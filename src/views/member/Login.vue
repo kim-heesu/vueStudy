@@ -9,7 +9,7 @@
                 </div>
                 <div class="form-box">
                     <label class="form-tit" for="loginPw">비밀번호</label>
-                    <input type="password" id="loginPw" placeholder="비밀번호를 입력하세요">
+                    <input type="password" id="loginPw" autocomplete="off" placeholder="비밀번호를 입력하세요">
                 </div>
                 <div class="btn-wrap">
                     <button type="submit" class="btn btn-green-bg">로그인</button>
