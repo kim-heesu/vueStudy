@@ -1,7 +1,7 @@
 <template>
     <header>
         <div class="inner">
-            <h1 class="logo"><router-link to="/">난 로고</router-link></h1>
+            <h1 class="logo"><router-link to="/">Vue</router-link></h1>
             <Nav />
             <div class="user-box">
                 <router-link to="/member/login" class="btn btn-green btn-login">로그인</router-link>
@@ -33,11 +33,12 @@ header .inner{
     padding: 1rem;
 }
 .logo{
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 3rem;
+    font-weight: 800;
+    color:#006900;
 }
 .user-box > * {
-    padding: 1rem;
+    padding: 0.8rem 1.2rem;
     margin: 0 0.5rem;
     font-size: 1.3rem;
     transition: all 0.3s;

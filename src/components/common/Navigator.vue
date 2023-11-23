@@ -49,7 +49,8 @@ nav ul li:hover .depth{
 }
 /* router active style */
 .router-link-active{
-    color: red;
-    border-bottom: 1px solid red;
+    color: green;
+    font-weight: 800;
+    border-bottom: 2px solid green;
 }
 </style>

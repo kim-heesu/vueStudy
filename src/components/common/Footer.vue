@@ -23,16 +23,18 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 footer{
+    background: #f8f8f8;
     padding: 2rem 0;
     border-top: 1px solid #ddd;
 }
 .f-logo{
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 800;
 }
 address{
-    font-size: 1.8rem;
     margin-top: 1.5rem;
+    font-size: 1.2rem;
+    color: #666;
     line-height: 1.4;
 }
 </style>

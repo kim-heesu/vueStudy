@@ -13,7 +13,7 @@
         height: 100vh;
         background: #f8f8f8;
         font-size: 2rem;
-        font-weight: 600;
+        font-weight: 800;
     }
 </style>
 

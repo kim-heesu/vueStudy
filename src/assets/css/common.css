@@ -2,12 +2,24 @@
 /* ----------------------------------------------------------------
        common
 ---------------------------------------------------------------- */
+/* font */
+@import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
+/* ----------------------------------------------------------------
+    nanumsquare
+
+    light : 100;
+    normal : 400;
+    bold : 600;
+    black: 800;
+---------------------------------------------------------------- */
 html {
     scroll-behavior: smooth;
     font-size: 10px;
+    font-family: "nanumsquare" , sans-serif;
 }
 * {
     letter-spacing: -0.05em;
+    font-family: "nanumsquare" , sans-serif;
 }
 .display-m {
     display: none;
