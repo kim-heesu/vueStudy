@@ -10,6 +10,10 @@
       </li>
       <li><router-link to="/byeVue">빠이</router-link></li>
     </ul>
+    <div class="user-box">
+      <router-link to="/member/login" class="btn btn-green btn-login">로그인</router-link>
+      <router-link to="/member/join" class="btn btn-green btn-join">회원가입</router-link>
+    </div>
   </nav>
 </template>
 
@@ -22,8 +26,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 nav {
-  display: inline-block;
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
 }
 nav ul {
   display: flex;
@@ -51,9 +57,19 @@ nav .depth li {
 nav ul li:hover .depth {
   display: block;
 }
-
+.user-box > * {
+  padding: 0.8rem 1.2rem;
+  margin: 0 0.5rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+}
 /* router active style */
-.router-link-active {
+nav ul li .router-link-active {
   color: green;
   font-weight: 800;
   border-bottom: 2px solid green;
