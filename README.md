@@ -44,7 +44,9 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 컴포넌트는 components폴더 안에 생성
 공통으로 쓸 css = src/assets/css/common.css
 공통으로 쓸 js = src/assets/js/common.js
-API 통신 axios 사용
+
+API 통신 axios 사용 
+(전역설정으로 각 페이지별로 import 하지않고 this.$axios로 사용)
 ```
 
 ### 네이밍규칙

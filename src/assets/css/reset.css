@@ -36,5 +36,5 @@ select{ -o-appearance: none; -webkit-appearance: none; -moz-appearance: none; ap
 select::-ms-expand { display: none; border:0;}
 input:focus,input:active,
 button:focus,button:active,
-textarea:focus,textarea:active{ outline: none; border:0; }
+textarea:focus,textarea:active{ outline: none; }
 a:focus,a:active { outline:none; }
