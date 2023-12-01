@@ -10,7 +10,9 @@
     <!-- v-for 와 v-if 는 동시에 쓸수없다. template 태그를 사용하여 분기처리 -->
     <template v-if="getList01.total_pages >= getList01.page">
       <li v-for="data in getList01.data" :key="data.id">
-        <img :src="data.avatar" :alt="data.last_name + '프로필'" />
+        <div class="img-wrap">
+          <img :src="data.avatar" :alt="data.last_name + '프로필'" />
+        </div>
         <p>유저네임 : {{ data.first_name }},{{ data.last_name }}</p>
         <p>이메일 : {{ data.email }}</p>
       </li>
@@ -21,9 +23,36 @@
   </ul>
 </template>
 <style scope>
+.get-list{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
 .get-list li {
   margin: 2rem 0;
   text-align: center;
+  border: 1px solid #006900;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;
+}
+
+.get-list li .img-wrap{
+  width: 100%;
+  max-width: 150px;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  margin: 0 auto;
+  margin-bottom: 0.5rem;
+}
+.get-list li .img-wrap img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .pagenation li {
