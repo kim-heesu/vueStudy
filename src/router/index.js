@@ -4,6 +4,7 @@ import HelloVue from "@/views/HelloVue.vue";
 import HelloVue02 from "@/components/HelloVue02.vue";
 import HelloVueContent from "@/views/HelloVueContent.vue";
 import ByeVue from "@/views/ByeVue.vue";
+import TestVue from "@/views/TestVue.vue";
 
 import Login from "@/views/member/Login.vue";
 import Join from "@/views/member/Join.vue";
@@ -48,6 +49,11 @@ const routes = [
         path: "/member/join",
         name: "Join",
         component: Join,
+    },
+    {
+        path: "/testVue",
+        name: "TestVue",
+        component: TestVue,
     },
 
     // 404

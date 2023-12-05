@@ -3,7 +3,11 @@
         <li v-for="num in getList01.total_pages" :key="num">
             <button type="button" :value="num" @click="[changePage($event), getList()]">{{ num }}</button>
         </li>
-        <li><button type="button" value="3" @click="[changePage($event), getList()]">page넘버가 현재 호출된 리스트의 total_pages보다 크면?</button></li>
+        <li>
+            <button type="button" value="3" @click="[changePage($event), getList()]">
+                page넘버가 현재 호출된 리스트의 total_pages보다 크면?
+            </button>
+        </li>
     </ul>
     <span>지금 페이지 번호는? 배포테스트 깜빡거리는가 보자 {{ page }}</span>
     <ul class="get-list">
@@ -21,6 +25,13 @@
     </ul>
 </template>
 <style scope>
+.get-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+}
 .get-list li {
     margin: 2rem 0;
     text-align: center;
@@ -45,7 +56,7 @@
     font-weight: 800;
 }
 .list-empty p::before {
-    content: 'ㅠ,ㅠ';
+    content: "ㅠ,ㅠ";
     display: block;
     margin-bottom: 1rem;
 }
@@ -53,13 +64,13 @@
 <script>
 // axios 예제
 export default {
-    name: 'AxiosTest',
+    name: "AxiosTest",
     components: {},
     data() {
         return {
             page: 1,
             getList01: {},
-            testTxt: '안녕',
+            testTxt: "안녕",
         };
     },
     mounted() {
