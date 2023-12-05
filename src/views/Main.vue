@@ -9,8 +9,6 @@
 </template>
 
 <script>
-import Instafeed from "../assets/js/instafeed.min.js";
-
 export default {
     name: "Main",
 };
