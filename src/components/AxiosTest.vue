@@ -9,7 +9,7 @@
             </button>
         </li>
     </ul>
-    <span>지금 페이지 번호는? 배포테스트 깜빡거리는가 보자 {{ page }}</span>
+    <span>지금 페이지 번호는? 배포테스트 깜빡거리는가 보자 수정됨?? {{ page }}</span>
     <ul class="get-list">
         <!-- v-for 와 v-if 는 동시에 쓸수없다. template 태그를 사용하여 분기처리 -->
         <template v-if="getList01.total_pages >= getList01.page">
