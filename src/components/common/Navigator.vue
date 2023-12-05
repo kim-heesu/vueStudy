@@ -11,18 +11,6 @@
             <li><router-link to="/byeVue">빠이</router-link></li>
             <li><router-link to="/testVue">컬러차트</router-link></li>
         </ul>
-    </nav>
-    <nav>
-        <ul>
-            <li><router-link to="/">HOME</router-link></li>
-            <li>
-                <router-link to="/helloVue">안뇽</router-link>
-                <ul class="depth">
-                    <li><router-link to="/helloVue/content">안뇽의 하위메뉴01</router-link></li>
-                </ul>
-            </li>
-            <li><router-link to="/byeVue">빠이</router-link></li>
-        </ul>
         <div class="user-box">
             <router-link to="/member/login" class="btn btn-green btn-login">로그인</router-link>
             <router-link to="/member/join" class="btn btn-green btn-join">회원가입</router-link>
@@ -39,9 +27,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 nav {
-    display: inline-block;
-    vertical-align: middle;
+    display: flex;
+    gap: 1rem;
 }
+
 nav ul {
     display: flex;
     align-content: center;
@@ -68,6 +57,7 @@ nav .depth li {
 nav ul li:hover .depth {
     display: block;
 }
+
 .user-box > * {
     padding: 0.8rem 1.2rem;
     margin: 0 0.5rem;
