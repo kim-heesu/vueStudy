@@ -3,9 +3,8 @@
         <div class="inner">
             <div class="insta">
                 <h1>인스타그램 api 테스트</h1>
-                <div v-for="image in images" :key="image.id">
-                    <img :src="image.src" alt="Instagram Image" />
-                </div>
+
+                <div id="instafeed"></div>
             </div>
         </div>
     </div>
@@ -22,22 +21,9 @@ export default {
         };
     },
     mounted() {
-        // instafeed.js 초기화
-        const feed = new Instafeed({
-            accessToken: 'IGQWRQUktnSHNBSkxCMUp5RnJVUjlkdDhiS0hhSXVYRjZA4VGFuNDdxZA0JiYVlsdkk1ZAEVjVzZAFUzFfQWJmYXppSzA4RklJY3pJWFVDbU5ZAUjA2NFg5SG9nc0xhQ0prc09WTEZATZA1RZAbzVoMEtSUmtGZAUs5Q3hRdlUZD', // 인스타그램 액세스 토큰
-            get: 'user',
-            userId: 'pawrest_1', // 인스타그램 사용자 ID
-            limit: 3, // 표시할 이미지의 개수
-            resolution: 'standard_resolution', // 이미지 해상도
-            success: (data) => {
-                this.images = data.data.map((item) => ({
-                    id: item.id,
-                    src: item.images.standard_resolution.url,
-                }));
-            },
+        var feed = new Instafeed({
+            accessToken: 'IGQWRNcjJ6eXNkRlhXRlp0Qm84enA0V1ZA5RVo0eTdIY2N2OUkzdGdFNHBmTExnbEdZAQWZAsNmVoMXpKc2tpVVJIdFlCVktPbFlUWl9ZAc3k1S1hMem1xTjE4WEtEWW9PY3NybmNydl9ndEFELV9VeUlVbENUVi1vY0kZD',
         });
-
-        // instafeed.js 실행
         feed.run();
     },
 };
