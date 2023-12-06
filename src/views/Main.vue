@@ -3,45 +3,42 @@
         <div class="inner">
             <div class="insta">
                 <h1>인스타그램 api 테스트</h1>
-                <ul>
-                    <li v-for="post in posts" :key="post.id">{{ post.caption }}</li>
-                </ul>
-                <iframe
-                    src="//lightwidget.com/widgets/10197cf7ccac5436a170f68f52442e61.html"
-                    scrolling="no"
-                    allowtransparency="true"
-                    class="lightwidget-widget"
-                    style="width: 100%; border: 0; overflow: hidden"
-                ></iframe>
+                <div v-for="image in images" :key="image.id">
+                    <img :src="image.src" alt="Instagram Image" />
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import lightWidget from '@/assets/js/lightwidget';
+// instafeed.js 라이브러리 임포트
+import Instafeed from 'instafeed.js';
+
 export default {
     data() {
         return {
-            posts: [],
+            images: [], // 인스타그램 이미지를 저장할 데이터 배열
         };
     },
     mounted() {
-        this.fetchPosts();
-    },
-    methods: {
-        fetchPosts() {
-            const script = document.createElement('script');
-            script.src = `https://api.instagram.com/v1/users/self/media/recent/?access_token=IGQWRQUktnSHNBSkxCMUp5RnJVUjlkdDhiS0hhSXVYRjZA4VGFuNDdxZA0JiYVlsdkk1ZAEVjVzZAFUzFfQWJmYXppSzA4RklJY3pJWFVDbU5ZAUjA2NFg5SG9nc0xhQ0prc09WTEZATZA1RZAbzVoMEtSUmtGZAUs5Q3hRdlUZD&callback=processPosts`;
-            document.body.appendChild(script);
-        },
-        processPosts(response) {
-            this.posts = response.data;
-        },
+        // instafeed.js 초기화
+        const feed = new Instafeed({
+            accessToken: 'IGQWRQUktnSHNBSkxCMUp5RnJVUjlkdDhiS0hhSXVYRjZA4VGFuNDdxZA0JiYVlsdkk1ZAEVjVzZAFUzFfQWJmYXppSzA4RklJY3pJWFVDbU5ZAUjA2NFg5SG9nc0xhQ0prc09WTEZATZA1RZAbzVoMEtSUmtGZAUs5Q3hRdlUZD', // 인스타그램 액세스 토큰
+            get: 'user',
+            userId: '654036360087457', // 인스타그램 사용자 ID
+            limit: 3, // 표시할 이미지의 개수
+            resolution: 'standard_resolution', // 이미지 해상도
+            success: (data) => {
+                this.images = data.data.map((item) => ({
+                    id: item.id,
+                    src: item.images.standard_resolution.url,
+                }));
+            },
+        });
+
+        // instafeed.js 실행
+        feed.run();
     },
 };
 </script>
-<!-- 
-var token = ""; $.ajax({ type:'GET', url : 'https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token='+token, dataType:'json', success:function(data){ token =
-data["access_token"]; }, error:function(request, error) { alert("error"); } }); 토큰
-IGQWRNc2xYWHVQdXBTSWNHMWx4SkJsajlxWTY2OC1mYkg1OElTaXYtTTlodXYyRTBJLVFEd2NJNDFWWmRnbmlsVjZADNUpIalNSeVcxNDRaQkRvNG05SWgwX2o2ZAGdSNjQ3d3ZAGLXh5dTdnSVZAOcVZAVLVBFYXd6RFkZD -->
