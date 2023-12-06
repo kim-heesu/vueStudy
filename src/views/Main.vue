@@ -22,7 +22,7 @@ export default {
     },
     mounted() {
         var feed = new Instafeed({
-            accessToken: 'IGQWRNcjJ6eXNkRlhXRlp0Qm84enA0V1ZA5RVo0eTdIY2N2OUkzdGdFNHBmTExnbEdZAQWZAsNmVoMXpKc2tpVVJIdFlCVktPbFlUWl9ZAc3k1S1hMem1xTjE4WEtEWW9PY3NybmNydl9ndEFELV9VeUlVbENUVi1vY0kZD',
+            accessToken: 'IGQWRPODFnREZAHYm8xenFzU1dmTk9lSFNrOExBVEQzbGRCeTQ2enFKN2djd2lydHdhX1FRbDZAUUTR0dUZAaYXBjVnNac1lhWEFiVXMxLTF4bVFWYVRJYjBpYnNFbmxMLVg0Wld2N3QzUjR2VVVhNTY0cmFGZAWEtVXcZD',
         });
         feed.run();
     },
