@@ -26,7 +26,7 @@ export default {
         const feed = new Instafeed({
             accessToken: 'IGQWRQUktnSHNBSkxCMUp5RnJVUjlkdDhiS0hhSXVYRjZA4VGFuNDdxZA0JiYVlsdkk1ZAEVjVzZAFUzFfQWJmYXppSzA4RklJY3pJWFVDbU5ZAUjA2NFg5SG9nc0xhQ0prc09WTEZATZA1RZAbzVoMEtSUmtGZAUs5Q3hRdlUZD', // 인스타그램 액세스 토큰
             get: 'user',
-            userId: '654036360087457', // 인스타그램 사용자 ID
+            userId: 'pawrest_1', // 인스타그램 사용자 ID
             limit: 3, // 표시할 이미지의 개수
             resolution: 'standard_resolution', // 이미지 해상도
             success: (data) => {
