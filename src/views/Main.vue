@@ -6,12 +6,20 @@
                 <ul>
                     <li v-for="post in posts" :key="post.id">{{ post.caption }}</li>
                 </ul>
+                <iframe
+                    src="//lightwidget.com/widgets/10197cf7ccac5436a170f68f52442e61.html"
+                    scrolling="no"
+                    allowtransparency="true"
+                    class="lightwidget-widget"
+                    style="width: 100%; border: 0; overflow: hidden"
+                ></iframe>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import lightWidget from '@/assets/js/lightwidget';
 export default {
     data() {
         return {
