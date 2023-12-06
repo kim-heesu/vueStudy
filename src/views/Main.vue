@@ -13,7 +13,7 @@
 
 <script>
 // instafeed.js 라이브러리 임포트
-import Instafeed from '@/assets/js/instafeed.js';
+import Instafeed from '@/assets/js/instafeed.min.js';
 
 export default {
     data() {
