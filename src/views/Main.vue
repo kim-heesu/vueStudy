@@ -3,7 +3,9 @@
         <div class="inner">
             <div class="insta">
                 <h1>인스타그램 api 테스트</h1>
-                {{ posts }}
+                <ul>
+                    <li v-for="post in posts" :key="post.id">{{ post.caption }}</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -21,18 +23,12 @@ export default {
     },
     methods: {
         fetchPosts() {
-            const accessToken =
-                'IGQWRQUktnSHNBSkxCMUp5RnJVUjlkdDhiS0hhSXVYRjZA4VGFuNDdxZA0JiYVlsdkk1ZAEVjVzZAFUzFfQWJmYXppSzA4RklJY3pJWFVDbU5ZAUjA2NFg5SG9nc0xhQ0prc09WTEZATZA1RZAbzVoMEtSUmtGZAUs5Q3hRdlUZD';
-            const apiUrl = `https://api.instagram.com/v1/users/self/media/recent/?access_token=${accessToken}`;
-
-            this.$axios
-                .get(apiUrl)
-                .then((response) => {
-                    this.posts = response.data.data;
-                })
-                .catch((error) => {
-                    console.error(error);
-                });
+            const script = document.createElement('script');
+            script.src = `https://api.instagram.com/v1/users/self/media/recent/?access_token=IGQWRQUktnSHNBSkxCMUp5RnJVUjlkdDhiS0hhSXVYRjZA4VGFuNDdxZA0JiYVlsdkk1ZAEVjVzZAFUzFfQWJmYXppSzA4RklJY3pJWFVDbU5ZAUjA2NFg5SG9nc0xhQ0prc09WTEZATZA1RZAbzVoMEtSUmtGZAUs5Q3hRdlUZD&callback=processPosts`;
+            document.body.appendChild(script);
+        },
+        processPosts(response) {
+            this.posts = response.data;
         },
     },
 };
