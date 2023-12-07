@@ -13,6 +13,7 @@
     <div class="user-box">
       <router-link to="/member/login" class="btn btn-green btn-login">로그인</router-link>
       <router-link to="/member/join" class="btn btn-green btn-join">회원가입</router-link>
+      <router-link to="/member/Update?user=2" class="btn btn-green">업데이트</router-link>
     </div>
   </nav>
 </template>

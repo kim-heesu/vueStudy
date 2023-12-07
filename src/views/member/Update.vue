@@ -8,16 +8,17 @@
           <input type="text" id="loginId" placeholder="아이디를 입력하세요" />
         </div> -->
         <div class="form-box">
-          <label class="form-tit" for="loginPw">비밀번호</label>
-          <input type="password" id="loginPw" v-model="loginPw" autocomplete="off" placeholder="비밀번호를 입력하세요" />
+          <label class="form-tit" for="updateName">이름</label>
+          <input type="password" id="updateName" v-model="updateName" autocomplete="off" placeholder="이름을 입력하세요" />
         </div>
         <div class="form-box">
-          <label class="form-tit" for="loginEmail">이메일</label>
-          <input type="text" id="loginEmail" v-model="loginEmail" placeholder="이메일을 입력하세요" />
+          <label class="form-tit" for="updateJob">직업</label>
+          <input type="text" id="updateJob" v-model="updateJob" placeholder="직업을 입력하세요" />
         </div>
         <div class="btn-wrap">
-          <button type="button" class="btn btn-green-bg" @click="loginGet()">로그인</button>
+          <button type="button" class="btn btn-green-bg" @click="updatePut()">업데이트</button>
           <router-link to="/member/join" class="btn btn-green">계정이 없나요?</router-link>
+          {{ userNum }}
         </div>
       </form>
     </div>
@@ -30,8 +31,9 @@ export default {
   name: 'Login',
   data() {
       return {
-        loginPw: '1234',
-        loginEmail: 'eve.holt@reqres.in',
+        updateName: 'morpheus',
+        updateJob: 'zion resident',
+        userNum: this.$route.query.user
       };
   },
   components: {},
@@ -39,15 +41,15 @@ export default {
     
   },
   methods: {
-      loginGet() {
+      updatePut() {
           this.$axios
-              .post(`https://reqres.in/api/login`,{
-                "email": this.loginEmail,
-                "password": this.loginPw
+              .put(`https://reqres.in/api/user/`+this.userNum,{
+                "name": this.updateName,
+                "job": this.updateJob
               })
               .then((res) => {
                   console.log(res)
-                  localStorage.setItem('token', res.data.token);
+                  alert('업데이트되었습니다, 업데이트 일시' + res.data.updatedAt)
               })
               .catch((res) => {
                   console.error(res);
