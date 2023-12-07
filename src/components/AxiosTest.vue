@@ -14,7 +14,7 @@
         <!-- v-for 와 v-if 는 동시에 쓸수없다. template 태그를 사용하여 분기처리 -->
         <template v-if="getList01.total_pages >= getList01.page">
             <li v-for="data in getList01.data" :key="data.id">
-                <img :src="data.avatar" :alt="data.last_name + '프로필'" />
+                <img :src="data.avatar" :alt="data.last_name + '프로필'" :style="{ opacity: data.id }" />
                 <p>유저네임 : {{ data.first_name }},{{ data.last_name }}</p>
                 <p>이메일 : {{ data.email }}</p>
             </li>
@@ -57,6 +57,7 @@
 }
 .list-empty p::before {
     content: "ㅠ,ㅠ";
+
     display: block;
     margin-bottom: 1rem;
 }
@@ -64,13 +65,17 @@
 <script>
 // axios 예제
 export default {
-    name: "AxiosTest",
+
+    name: 'AxiosTest',
+
     components: {},
     data() {
         return {
             page: 1,
             getList01: {},
-            testTxt: "안녕",
+
+            testTxt: '안녕',
+
         };
     },
     mounted() {

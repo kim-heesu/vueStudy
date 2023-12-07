@@ -8,6 +8,7 @@ import TestVue from "@/views/TestVue.vue";
 
 import Login from "@/views/member/Login.vue";
 import Join from "@/views/member/Join.vue";
+import Update from "@/views/member/Update.vue";
 
 import Error404 from "@/views/Error404.vue"
 
@@ -54,6 +55,11 @@ const routes = [
         path: "/testVue",
         name: "TestVue",
         component: TestVue,
+    },
+    {
+        path: "/member/Update",
+        name: "Update",
+        component: Update,
     },
 
     // 404
